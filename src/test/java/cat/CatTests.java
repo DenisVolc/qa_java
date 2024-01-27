@@ -22,13 +22,10 @@ public class CatTests {
     public void getSoundTest(){
         Assert.assertEquals("Мяу",cat.getSound());
     }
-//    @Test//TODO исправить эту шляпу
-//    public void getFoodTest() throws Exception {
-//        List<String> result = cat.getFood();//todo пофиксить
-//        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-//        assertEquals(List.of("Животные", "Птицы", "Рыба"),result);
-//    }
-
-
-
+    @Test//TODO исправить эту шляпу
+    public void getFoodTest() throws Exception {
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));//тут мокирую feline
+        List<String> result = cat.getFood();//тут испольузю кота
+        assertEquals(List.of("Животные", "Птицы", "Рыба"),result);// и тут тоже использую кота
+    }
 }
