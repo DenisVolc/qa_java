@@ -17,13 +17,15 @@ import static org.junit.Assert.assertEquals;
 public class CatTests {
     @Mock
     Feline feline;
-    Cat cat = new Cat(feline);
+
     @Test
     public void getSoundTest(){
+        Cat cat = new Cat(feline);
         Assert.assertEquals("Мяу",cat.getSound());
     }
     @Test//TODO исправить эту шляпу
     public void getFoodTest() throws Exception {
+        Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));//тут мокирую feline
         List<String> result = cat.getFood();//тут испольузю кота
         assertEquals(List.of("Животные", "Птицы", "Рыба"),result);// и тут тоже использую кота
