@@ -1,3 +1,5 @@
+package feline;
+
 import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,5 +16,17 @@ public class FelineTests {
         List<String> result = testFeline.eatMeat();
         assertEquals(result, List.of("Животные", "Птицы", "Рыба"));
     }
+    @Test
+    public void getFamilyTest() {
+        assertEquals(testFeline.getFamily(), "Кошачьи");
+    }
+    @Test
+    public void getKittensTest(){
+        assertEquals(testFeline.getKittens(),1);
+    }
+
+
+
+
     
 }
