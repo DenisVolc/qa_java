@@ -23,7 +23,7 @@ public class CatTests {
         Cat cat = new Cat(feline);
         Assert.assertEquals("Мяу",cat.getSound());
     }
-    @Test//TODO исправить эту шляпу
+    @Test
     public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));//тут мокирую feline

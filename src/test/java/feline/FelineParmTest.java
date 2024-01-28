@@ -20,8 +20,8 @@ public class FelineParmTest {
         return new Object[][]{
                 {0,0},
                 {1,1},
-                {-1,-1},//TODO тут наверное надо бы как-нибудь выкинуть ошибку о том,
-                        // что котят не может быть отрицательное кол-во
+                {2147483647,2147483647},
+                //{-1,-1} проверяется в FelineTests.getKittensMinusOneTest()
         };
     }
     @Test

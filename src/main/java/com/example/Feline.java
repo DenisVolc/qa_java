@@ -6,7 +6,7 @@ public class Feline extends Animal implements Predator {
 
     @Override
     public List<String> eatMeat() throws Exception {
-        return getFood("Хищник");// todo зависимость!
+        return getFood("Хищник");
     }
 
     @Override
@@ -15,10 +15,12 @@ public class Feline extends Animal implements Predator {
     }
 
     public int getKittens() {
-        return getKittens(1);// todo зависимость!
+        return getKittens(1);
     }
 
-    public int getKittens(int kittensCount) {//ЗОЧЕМ?
+    public int getKittens(int kittensCount) throws IndexOutOfBoundsException{
+        if (kittensCount < 0){throw new IndexOutOfBoundsException("Котят не может быть меньше нуля");}//Это моя самодеятельность.
+        // Хотел написать тест который будет проверять отрицаетльное значение и что бы результат был правдивым.
         return kittensCount;
     }
 

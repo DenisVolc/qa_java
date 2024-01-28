@@ -21,10 +21,14 @@ public class FelineTests {
         assertEquals(testFeline.getFamily(), "Кошачьи");
     }
     @Test
-    public void getKittensTest(){
+    public void getKittensNoParmsTest(){
         assertEquals(testFeline.getKittens(),1);
     }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getKittensMinusOneTest(){ // проверя что котят не может быть меньше нуля
+        testFeline.getKittens(-1);
+    }
 
 
 
