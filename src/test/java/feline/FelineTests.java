@@ -14,15 +14,15 @@ public class FelineTests {
     @Test
     public void eatMeatTest() throws Exception {
         List<String> result = testFeline.eatMeat();
-        assertEquals(result, List.of("Животные", "Птицы", "Рыба"));
+        assertEquals( List.of("Животные", "Птицы", "Рыба"),result);
     }
     @Test
     public void getFamilyTest() {
-        assertEquals(testFeline.getFamily(), "Кошачьи");
+        assertEquals("Кошачьи",testFeline.getFamily());
     }
     @Test
     public void getKittensNoParmsTest(){
-        assertEquals(testFeline.getKittens(),1);
+        assertEquals(1,testFeline.getKittens());
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

@@ -9,11 +9,11 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class FelineParmTest {
     private final int kittens;
-    private final int result;
+    private final int expect;
 
     public FelineParmTest(int kittens, int result) {
         this.kittens = kittens;
-        this.result = result;
+        this.expect = result;
     }
     @Parameterized.Parameters // добавили аннотацию
     public static Object[][] kittensAndResult() {
@@ -27,6 +27,6 @@ public class FelineParmTest {
     @Test
     public void getKittensTest(){
         Feline testFeline = new Feline();
-        Assert.assertEquals(testFeline.getKittens(kittens),result);
+        Assert.assertEquals(expect,testFeline.getKittens(kittens));
     }
 }
