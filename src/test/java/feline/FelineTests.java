@@ -1,6 +1,7 @@
 package feline;
 
 import com.example.Feline;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -24,10 +25,11 @@ public class FelineTests {
     public void getKittensNoParmsTest(){
         assertEquals(1,testFeline.getKittens());
     }
-
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void getKittensMinusOneTest(){ // проверя что котят не может быть меньше нуля
-        testFeline.getKittens(-1);
+        Assert.assertThrows(IndexOutOfBoundsException.class,()-> {
+            testFeline.getKittens(-1);
+        } );
     }
 
 

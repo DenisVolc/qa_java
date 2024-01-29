@@ -2,7 +2,6 @@ package lion;
 
 import com.example.Feline;
 import com.example.Lion;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -12,14 +11,18 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 @RunWith(MockitoJUnitRunner.class)
 public class LionTests {
     @Mock
     Feline feline;
 
-    @Test(expected = Exception.class)
-    public void nomaleLionTest() throws Exception {
-        Lion lion = new Lion("Сумка",feline);
+    @Test
+    public void nomaleLionTest() {
+        assertThrows(Exception.class,()->{
+           new Lion("Сумка",feline);
+        });
     }
     @Test
     public void getKittensTest() throws Exception {
