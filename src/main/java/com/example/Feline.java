@@ -18,7 +18,9 @@ public class Feline extends Animal implements Predator {
         return getKittens(1);
     }
 
-    public int getKittens(int kittensCount) {
+    public int getKittens(int kittensCount) throws IndexOutOfBoundsException{
+        if (kittensCount < 0){throw new IndexOutOfBoundsException("Котят не может быть меньше нуля");}//Это моя самодеятельность.
+        // Хотел написать тест который будет проверять отрицаетльное значение и что бы результат был правдивым.
         return kittensCount;
     }
 
